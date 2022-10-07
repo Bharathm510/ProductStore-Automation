@@ -1,15 +1,16 @@
-package Assignments;
+package Assignments.Assignments;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
-public class RadiusSelect {
-
-	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\sai\\Documents\\chromedriver_win32\\chromedriver.exe");
+public class RadiusSelectTest {
+  @Test
+  public void f() throws InterruptedException {
+	  System.setProperty("webdriver.chrome.driver", "C:\\Users\\sai\\Documents\\chromedriver_win32\\chromedriver.exe");
 	    WebDriver driver = new ChromeDriver();
 	    driver.manage().window().maximize();
 	    driver.get("https://demoqa.com/automation-practice-form");
@@ -22,10 +23,9 @@ public class RadiusSelect {
 	    
 	    Thread.sleep(3000);
 	    driver.findElement(By.xpath("//label[text()='Male']")).click();
-	    Thread.sleep(5000);
+	    
 	    WebElement rds = driver.findElement(By.id("gender-radio-1"));
 	    System.out.println(rds.isSelected());
-        driver.close();
-	}
-
+      driver.close();
+  }
 }
